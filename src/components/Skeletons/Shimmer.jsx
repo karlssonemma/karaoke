@@ -1,9 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-function Shimmer() {
-
-    const move = keyframes`
+const move = keyframes`
         from {
             transform: translateX(-150%)
         }
@@ -22,7 +20,7 @@ function Shimmer() {
         overflow: hidden;
     `;
 
-    const Shimmer = styled.div`
+    const ShimmerDiv = styled.div`
         width: 50%;
         height: 100%;
         background-color: rgba(255,255,255,0.2);
@@ -30,9 +28,12 @@ function Shimmer() {
         box-shadow: 0 0 30px 30px rgba(255,255,255,0.05);
     `;
 
+
+function Shimmer() {
+
     return(
         <ShimmerWrapper>
-            <Shimmer />
+            <ShimmerDiv />
         </ShimmerWrapper>
     )
 }

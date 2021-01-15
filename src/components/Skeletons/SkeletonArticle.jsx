@@ -3,15 +3,14 @@ import styled from 'styled-components';
 import Shimmer from './Shimmer';
 import SkeletonElement from './SkeletonElement'
 
+const SkeletonWrapper = styled.div`
+    height: 300px;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px lightgray;
+    `;
 
 function SkeletonArticle(props) {
-
-    const SkeletonWrapper = styled.div`
-        height: 300px;
-        padding: 1em;
-        border-radius: 10px;
-        box-shadow: 0px 0px 10px lightgray;
-        `;
 
     return(
         <SkeletonWrapper>

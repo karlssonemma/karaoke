@@ -32,6 +32,7 @@ function Card(props) {
             <Avatar src={props.avatar}></Avatar>
             <p>{props.first_name} {props.last_name}</p>
             <p>{props.email}</p>
+            <button onClick={() => props.deletePerson(props.id)}>DELETE</button>
         </Person>
 
     )

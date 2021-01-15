@@ -48,19 +48,27 @@ function HomePage() {
     
     // getInfo();
 
+
+    function deletePerson(id) {
+        const newState = url.filter(urls => urls.id !== id);
+        setUrl(newState);
+    }
+
     function renderPage() {
         return(
             url.map(item => {
                 return <Card 
-                first_name={item.first_name}
-                last_name={item.last_name}
-                email={item.email}
-                key={item.id}
-                avatar={item.avatar}
+                    first_name={item.first_name}
+                    last_name={item.last_name}
+                    email={item.email}
+                    key={item.id}
+                    id={item.id}
+                    avatar={item.avatar}
+                    deletePerson={deletePerson}
                 />
-            }
+            })
         )
-    )};
+    };
 
     function renderSkeleton() {
         return(
@@ -75,7 +83,7 @@ function HomePage() {
         <Section>
             <List>
                 {
-                (url === null) ? renderSkeleton() : renderPage()
+                    (url === null) ? renderSkeleton() : renderPage()
                 }
             </List>
             {/* <List>
